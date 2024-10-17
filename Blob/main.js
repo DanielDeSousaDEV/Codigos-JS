@@ -61,10 +61,12 @@ let fileInput = document.getElementById('fileInput')
 form.addEventListener('submit', (submitEvent)=>{
     submitEvent.preventDefault()
     
+    //pega somente o primeiro arquivo pois indepedente de ser um input unico de arquivo ou não é passada uma lista de arquivos
     let primeiroArquivo = fileInput.files[0]
     console.log("arquivo enviado")
     console.log(primeiroArquivo)
-    
+
+    //as partes do arquivo precisam ser um array
     blob = new Blob([primeiroArquivo], {type: primeiroArquivo.type})
     console.log("blob criado")
     console.log(blob)
