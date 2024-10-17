@@ -71,7 +71,7 @@ form.addEventListener('submit', (submitEvent)=>{
     console.log("blob criado")
     console.log(blob)
 
-    //cria uma URL para pode acessar o blob
+    //cria uma URL para poder acessar o blob
     const obj_url = URL.createObjectURL(blob);
     const iframe = document.getElementById("viewer");
     iframe.setAttribute("src", obj_url);
