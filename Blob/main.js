@@ -66,7 +66,7 @@ form.addEventListener('submit', (submitEvent)=>{
     console.log("arquivo enviado")
     console.log(primeiroArquivo)
 
-    //as partes do arquivo precisam ser um array
+    //as partes do arquivo precisam ser um array (o primeiroArquivo é do tipo file porem eles podem serem usados no mesmo contexto do blob)
     blob = new Blob([primeiroArquivo], {type: primeiroArquivo.type})
     console.log("blob criado")
     console.log(blob)
