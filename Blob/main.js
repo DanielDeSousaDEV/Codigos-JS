@@ -33,7 +33,7 @@ myReader.addEventListener("load", function (evento){
 
 //Adiciona um ouvinte ao evento de fim de leitura do myReader
 myReader.onload = function () {
-    alert("acabou uma leitura")
+    console.log("acabou uma leitura")
 }
 
 console.log("Instancia do leitor")
@@ -60,6 +60,18 @@ let fileInput = document.getElementById('fileInput')
 
 form.addEventListener('submit', (submitEvent)=>{
     submitEvent.preventDefault()
+    
+    let primeiroArquivo = fileInput.files[0]
+    console.log("arquivo enviado")
+    console.log(primeiroArquivo)
+    
+    blob = new Blob([primeiroArquivo], {type: primeiroArquivo.type})
+    console.log("blob criado")
+    console.log(blob)
 
-    console.log(fileInput.files)
+    console.log(blob)
+    const obj_url = URL.createObjectURL(blob);
+    const iframe = document.getElementById("viewer");
+    iframe.setAttribute("src", obj_url);
 })
+
