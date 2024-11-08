@@ -1,14 +1,16 @@
-const sum = require("../Calculator");
+const Calculator = require("../Calculator");
+
+const Calculator1 = new Calculator()
 
 //assercoes simples
 test('soma de dois numeros toBe', () => {
-    expect(sum(4,5)).toBe(9);
+    expect(Calculator1.sum(4,5)).toBe(9);
 })
 test('soma de dois numeros toEqual', () => {
-    expect(sum(4,5)).toEqual(9);//para objetos e arrays
+    expect(Calculator1.sum(4,5)).toEqual(9);//para objetos e arrays
 })
 test('soma de dois numeros toStrictEqual', () => {
-    expect(sum(4,5)).toStrictEqual('9');
+    expect(Calculator1.sum(4,5)).toStrictEqual('9');
 })
 
 //falsys e truelys
@@ -76,7 +78,7 @@ test('não possui maça na lista', ()=>{
 
 //exeptions
 function throwExeption() {
-    throw new Error('erro lancado para testes!');
+    throw Error('erro lancado para testes!');
 }
 
 test('teste de throw', () => {
@@ -92,7 +94,7 @@ test('teste de throw', () => {
     expect(throwExeption()).toThrow(/^erro lancado para testes!$/); // Test pass
 });
 
-//async js
+//async js // um teste não pode exeder 5 seg por teste
 function fetchData() {
     return new Promise((resolve, reject)=>{
 
